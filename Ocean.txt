@@ -1,0 +1,72 @@
+Question: How deep is the Mariana Trench
+A: 11 km
+B: 12 km
+C: 10 km
+D: 18 km
+Answer: 11 km
+Question: How much of the Earth's surface is covered by ocean?
+A: 51%
+B: 71%
+C: 81%
+D: 100%
+Answer: 71%
+Question: What is the ocean's greatest predator?
+A: Shark
+B: Dolphin
+C: Orca
+D: Octopus
+Answer: Orca
+Question: Which shark can swim the fastest?
+A: Great White Shark
+B: Tiger Shark
+C: Bull Shark
+D: Shortfin Mako Shark
+Answer: Shortfin Mako Shark
+Question: How long can a Curved Beak Whale hold its breath?
+A: 138 minutes
+B: 15 minutes
+C: 90 minutes
+D: 30 minutes
+Answer: 138 minutes
+Question: Which of Earth's oceans is the largest?
+A: Atlantic Ocean
+B: Pacific Ocean
+C: Arctic Ocean
+D: Indian Ocean
+Answer: Pacific Ocean
+Question: Which crab is the largest?
+A: Tasmaninan Giant Crab
+B: Coconut Crab
+C: Japanese Spider Crab
+D: Alaskan King Crab
+Answer: Japanese Spider Crab
+Question: Where do the Atlantic and Pacific Oceans meet?
+A: Lake Titicaca
+B: The Pantanal
+C: Dos Patos Lagoon
+D: Cape Horn
+Answer: Cape Horn
+Question: Which process is responsible for the formation of coral reefs?
+A: Coral Polyp Growth and Calcification
+B: Sedimentation
+C: Volcanic Eruptions
+D: Wave Erosion
+Answer: Coral Polyp Growth and Calcification
+Question: Which warm ocean current flows up the eastern coast of North America?
+A: Antarctic Circumpolar Current
+B: Gulf Stream
+C: Humboldt Current
+D: California Current
+Answer: Gulf Stream
+Question: Why do the ocean's tides and sea levels rise and fall?
+A: There is so much water that it moves around a lot
+B: Earth rotating around the sun
+C: The gravitational pull of the moon
+D: The sand attracts the ocean's water
+Answer: The gravitational pull of the moon
+Question: What is the deepest humans have been in the ocean?
+A: The Mesopelagic Zone
+B: Titanic Deep
+C: Abyssopelagic Zone
+D: Challenger Deep
+Answer: Challenger Deep

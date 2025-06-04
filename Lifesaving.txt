@@ -1,0 +1,149 @@
+Question: How deep is the Mariana Trench
+A: 11 km
+B: 12 km
+C: 10 km
+D: 18 km
+Answer: 11 km
+Question: How much of the Earth's surface is covered by ocean?
+A: 51%
+B: 71%
+C: 81%
+D: 100%
+Answer: 71%
+Question: What is the ocean's greatest predator?
+A: Shark
+B: Dolphin
+C: Orca
+D: Octopus
+Answer: Orca
+Question: Which shark can swim the fastest?
+A: Great White Shark
+B: Tiger Shark
+C: Bull Shark
+D: Shortfin Mako Shark
+Answer: Shortfin Mako Shark
+Question: How long can a Curved Beak Whale hold its breath?
+A: 138 minutes
+B: 15 minutes
+C: 90 minutes
+D: 30 minutes
+Answer: 138 minutes
+Question: Which of Earth's oceans is the largest?
+A: Atlantic Ocean
+B: Pacific Ocean
+C: Arctic Ocean
+D: Indian Ocean
+Answer: Pacific Ocean
+Question: Which crab is the largest?
+A: Tasmaninan Giant Crab
+B: Coconut Crab
+C: Japanese Spider Crab
+D: Alaskan King Crab
+Answer: Japanese Spider Crab
+Question: Where do the Atlantic and Pacific Oceans meet?
+A: Lake Titicaca
+B: The Pantanal
+C: Dos Patos Lagoon
+D: Cape Horn
+Answer: Cape Horn
+Question: Which process is responsible for the formation of coral reefs?
+A: Coral Polyp Growth and Calcification
+B: Sedimentation
+C: Volcanic Eruptions
+D: Wave Erosion
+Answer: Coral Polyp Growth and Calcification
+Question: Which warm ocean current flows up the eastern coast of North America?
+A: Antarctic Circumpolar Current
+B: Gulf Stream
+C: Humboldt Current
+D: California Current
+Answer: Gulf Stream
+Question: Why do the ocean's tides and sea levels rise and fall?
+A: There is so much water that it moves around a lot
+B: Earth rotating around the sun
+C: The gravitational pull of the moon
+D: The sand attracts the ocean's water
+Answer: The gravitational pull of the moon
+Question: What is the deepest humans have been in the ocean?
+A: The Mesopelagic Zone
+B: Titanic Deep
+C: Abyssopelagic Zone
+D: Challenger Deep
+Answer: Challenger Deep
+
+
+
+
+
+Question: What does the "A" in WARTS stand for?
+A: ABCs
+B: Asphyxiation
+C: AED
+D: Angina
+Answer: ABCs
+Question: What is the order for CPR on land?
+A: 2 breaths
+B: 30 compressions, 2 breaths
+C: 2 breaths, 30 compressions
+D: 30 compressions
+Answer: 30 compressions, 2 breaths
+Question: What is the order for CPR after being in water?
+A: 2 breaths
+B: 30 compressions, 2 breaths
+C: 2 breaths, 30 compressions 
+D: 30 compressions
+Answer: 2 breaths, 30 compressions
+Question: What do you do if someone bleeds through their bandages?
+A: Nothing
+B: Remove the old ones and tell them to apply pressure directly to the wound
+C: Remove the old ones and rewrap the injury
+D: Put more bandages on top
+Answer: Put more bandages on top
+Question: What does the "L" in SAMPLE mean?
+A: Last thing you ate
+B: Lifesaving
+C: Leave the area
+D: Last thing you saw
+Answer: Last thing you ate
+Question: How do you do CPR on an infant?
+A: Jump on them
+B: 2 fingers
+C: One hand
+D: Two hands
+Answer: 2 fingers
+Question: What do you do if someone is having a seizure?
+A: Grab them
+B: Put something in their mouth
+C: Clear the area so they won't hit anything
+D: Hold them down to the ground
+Answer: Clear the area so they wont hit anything
+Question: Where do the patches of an AED go on an adult?
+A: In the middle of the chest and the back
+B: On top of one another over the heart
+C: On both sides of the stomach
+D: On the upper right chest and on the left below the armpit
+Answer: On the upper right chest and on the left below the armpit
+Question: How do you open someone's airway?
+A: Head tilt, chin lift
+B: Head lift, chin tilt
+C: The airway is always open
+D: Move the head around a bit
+Answer: Head tilt, chin lift
+Question: If you are alone and saving someone from drowning, when should you call EMS?
+A: Immediately when identifying the situation
+B: After 2 minutes
+C: After 5 minutes
+D: Wait for someone else to show up and they can call
+Answer: After 2 minutes
+Question: Which heart rhythm can an AED shock?
+A: Asystole
+B: Pulseless Electrical Activity
+C: Ventricular Fibrillation and Pulseless Ventricular Tachycardia
+D: All of them
+Answer: Ventricular Fibrillation and Pulseless Ventricular Tachycardia
+Question: When do you need to renew a lifeguard certification?
+A: Never
+B: Every year
+C: Every three years
+D: Every two years
+Answer: Every two years
