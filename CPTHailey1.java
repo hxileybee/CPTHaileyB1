@@ -1,84 +1,107 @@
 import arc.*;
 import java.awt.*;
-import java.awt.Font;
 
 public class CPTHailey1{
 	public static void main(String[] args){
 		Console con = new Console("Multiple Choice Game", 1280, 720);
 			
-			/*con.setDrawColor(Color.WHITE);
-			con.fillRect(0, 0, 1280, 720);
+			boolean blnMenu = true;
 			
-			con.setDrawColor(new Color(137, 207, 240));
-			con.fillRoundRect(150, 200, 350, 100,  50, 50);
-			con.fillRoundRect(150, 325, 350, 100,  50, 50);
-			con.fillRoundRect(150, 450, 350, 100,  50, 50);
-			con.fillRoundRect(150, 575, 350, 100,  50, 50);
-			
-			//font to be added because it is being weird
-			//and not downloading and importing properly!!
-			Font fntTitle = con.loadFont("SoulDaisy.otf", 100);
-			Font fntOptions = con.loadFont("SoulDaisy.otf", 60);
-			
-			con.setDrawFont(fntTitle);
-			con.setDrawColor(new Color(137, 207, 240));
-			con.drawString("MULTIPLE CHOICE GAME", 125, 0);
-			
-			con.setDrawFont(fntOptions);
-			con.setDrawColor(Color.WHITE);
-			con.drawString("PLAY", 265, 183);
-			con.drawString("LEADERBOARD", 150, 308);
-			con.drawString("ADD QUIZ", 195, 433);
-			con.drawString("QUIT", 265, 558);
-			
-			con.repaint();*/
-		
-			String strQuiz1[][];
-			
-			strQuiz = loadQuiz1();
-	}
-	public static String[][] loadQuiz1(){
-		String strQuiz1[][];
-		String strQuestion;
-		String strA;
-		String strB;
-		String strC;
-		String strD;
-		String strAnswer;
-		int intcount;
-		
-		strQuiz1 = new String[12][7];
-		
-		TextInputFile transform = new TextInputFile("transformers.txt");
-		
-		while(transform.eof() == false){
-			strQuestion = transform.readLine();
-			strA = transform.readLine();
-			strB = transform.readLine();
-			strC = transform.readLine();
-			strD = transform.readLine();
-			strAnswer = transform.readLine();
-			
-			for(intcount = 0; intcount <= 12; intcount++){
-				String strChoice;
-				int intpoints = 0;
+			while(blnMenu){
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0, 0, 1280, 720);
 				
-				con.println("What is your answer?");
-				strChoice = con.readLine();
-				if(strAnswer = strChoice.equalsIgnoreCase(strAnswer)){
-					intpoints++;
+				con.setDrawColor(Color.WHITE);
+				con.drawString("MULTIPLE CHOICE GAME", 510, 25);
+				
+				con.setDrawColor(Color.WHITE);
+				con.drawString("PLAY", 600, 180);
+				con.drawString("LEADERBOARD", 558, 220);
+				con.drawString("ADD QUIZ", 575, 260);
+				con.drawString("QUIT", 600, 300);
+				con.drawString("WHAT WOULD YOU LIKE TO DO? (click 1, 2, 3, or 4)", 350, 480);
+				con.drawString("1 - Play, 2 - Leaderboard, 3 - Add, 4 - Quit", 365, 500);
+				
+				con.repaint();
+				
+				char chrInput = con.getChar();
+				
+				if(chrInput == '1'){//play game
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(0, 0, 1280, 720);
+					con.repaint();
+				
+					con.setDrawColor(Color.WHITE);
+					con.drawString("LOADING GAME...", 550, 360);
+					con.repaint();
+					con.sleep(1000);
+					
+					playgame(con);
+					blnMenu = false;
+				}else if(chrInput == '2'){//leaderboard
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(0, 0, 1280, 720);
+					con.repaint();
+					
+					con.setDrawColor(Color.WHITE);
+					con.drawString("LOADING LEADERBOARD...", 500, 360);
+					con.repaint();
+					con.sleep(1000);
+					
+					blnMenu = false;
+				}else if(chrInput == '3'){//add a quiz
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(0, 0, 1280, 720);
+					con.repaint();
+					
+					con.setDrawColor(Color.WHITE);
+					con.drawString("TIME TO ADD A QUIZ!", 525, 360);
+					con.repaint();
+					con.sleep(1000);
+					
+					blnMenu = false;
+				}else if(chrInput == '4'){//closes window
+					con.closeConsole();
 				}
 			}
 			
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 1280, 720);
+			con.repaint();
+	}
+	public static void playgame(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);				
+		con.repaint();
+		
+		con.setDrawColor(Color.WHITE);
+		con.drawString("ENTER YOUR NAME", 540, 300);
+		con.repaint();
+		
+		String strname = "";
+		char chrLetter;
+		boolean blnName = true;
+		
+		while(blnName == true){
+			chrLetter = con.getChar();
+			
+			if(chrLetter == '\n'){
+				blnName = false;
+			}
+			
+			strname += chrLetter;
+			
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 340, 1280, 50);
+			con.setDrawColor(Color.WHITE);
+			int intwidth = 20;
+			int intTotalwidth = strname.length() * intwidth;
+			int intStartx = 640 - (intTotalwidth / 2);
+			
+			con.drawString(strname, intStartx, 370);
+			
+			con.repaint();
 		}
-		
-		transform.close();
-		
-		strQuiz1 = new String[intcount][7];
-		
-		return strQuiz1;
-		
-		
 	}
 }
 
