@@ -82,7 +82,7 @@ public class CPTHailey1{
 		char chrLetter;
 		boolean blnName = true;
 		
-		while(blnName == true){
+		while(blnName){
 			chrLetter = con.getChar();
 			
 			if(chrLetter == '\n'){
@@ -90,17 +90,86 @@ public class CPTHailey1{
 			}else{
 				strname += chrLetter;
 			
-			con.setDrawColor(Color.BLACK);
-			con.fillRect(0, 340, 1280, 50);
-			con.setDrawColor(Color.WHITE);
-			int intwidth = 12;
-			int intTotalwidth = strname.length() * intwidth;
-			int intStartx = 640 - (intTotalwidth / 2);
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0, 340, 1280, 50);
+				
+				con.setDrawColor(Color.WHITE);
+				int intwidth = 12;
+				int intTotalwidth = strname.length() * intwidth;
+				int intStartx = 640 - (intTotalwidth / 2);
 			
-			con.drawString(strname, intStartx, 370);
-			
-			con.repaint();
+				con.drawString(strname, intStartx, 370);
+				con.repaint();
 			}
+		}
+		
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.repaint();
+		
+		con.setDrawColor(Color.WHITE);
+		con.drawString("WHICH QUIZ WOULD YOU LIKE TO PLAY?", 430, 80);
+		con.drawString("PRESS THE CORRESPONDING NUMBER FOR YOUR CHOSEN QUIZ", 335, 500);
+		
+		TextInputFile quizFile = new TextInputFile("Quizzes.txt");
+		
+		int intLines;
+		intLines = 0;
+		
+		while(quizFile.eof() == false){
+			quizFile.readLine();
+			intLines++;
+		}
+		
+		quizFile.close();
+		
+		String strquizNames[] = new String[intLines];
+		TextInputFile quizFile2 = new TextInputFile("Quizzes.txt");
+		
+		int inty = 120;
+		int intNum = 1;
+		int intNum2 = 0;
+		
+		while(quizFile2.eof() == false){
+			String strLine = quizFile2.readLine();
+			strquizNames[intNum2] = strLine;
+			
+			con.setDrawColor(Color.WHITE);
+			con.drawString(intNum +" - " +strLine, 500, inty);
+			inty += 30;
+			intNum++;
+			intNum2++;
+		}
+		
+		quizFile2.close();
+		con.repaint();
+		
+		con.sleep(500);
+		char chrQuiz = con.getChar();
+		
+		int intPick = chrQuiz - '0';
+		
+		if(intPick >= 1 && intPick <= strquizNames.length){
+			String strChoice = strquizNames[intPick - 1];
+			
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 1280, 720);
+			con.setDrawColor(Color.WHITE);
+			
+			TextInputFile quiz = new TextInputFile(strChoice);
+			
+			int inty2 = 100;
+			
+			while(quiz.eof() == false){
+				String strLine2 = quiz.readLine();
+				con.drawString(strLine2, 100, inty2);
+				inty2 += 30;
+			}
+			quiz.close();
+			con.repaint();
+		}else{
+			con.drawString("INVALID", 100, 600);
+			con.repaint();
 		}
 	}
 }
