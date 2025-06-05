@@ -87,20 +87,20 @@ public class CPTHailey1{
 			
 			if(chrLetter == '\n'){
 				blnName = false;
-			}
-			
-			strname += chrLetter;
+			}else{
+				strname += chrLetter;
 			
 			con.setDrawColor(Color.BLACK);
 			con.fillRect(0, 340, 1280, 50);
 			con.setDrawColor(Color.WHITE);
-			int intwidth = 20;
+			int intwidth = 12;
 			int intTotalwidth = strname.length() * intwidth;
 			int intStartx = 640 - (intTotalwidth / 2);
 			
 			con.drawString(strname, intStartx, 370);
 			
 			con.repaint();
+			}
 		}
 	}
 }
