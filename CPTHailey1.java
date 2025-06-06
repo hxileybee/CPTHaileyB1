@@ -70,14 +70,17 @@ public class CPTHailey1{
 			con.repaint();
 	}
 	public static void playgame(Console con){
+		//ask for name
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);				
 		con.repaint();
 		
 		con.setDrawColor(Color.WHITE);
-		con.drawString("ENTER YOUR NAME", 540, 300);
+		con.drawString("ENTER YOUR NAME", 550, 300);
 		con.repaint();
 		
+		//entering name code (center of screen-ish)
+		//try to fix overlap + streaking
 		String strname = "";
 		char chrLetter;
 		boolean blnName = true;
@@ -87,22 +90,27 @@ public class CPTHailey1{
 			
 			if(chrLetter == '\n'){
 				blnName = false;
+			}else if(chrLetter == '\b'){//google says backspace is \b
+				if(strname.length() > 0){
+					strname = strname.substring(0, strname.length() - 1);
+				}
 			}else{
 				strname += chrLetter;
-			
-				con.setDrawColor(Color.BLACK);
-				con.fillRect(0, 340, 1280, 50);
-				
-				con.setDrawColor(Color.WHITE);
-				int intwidth = 12;
-				int intTotalwidth = strname.length() * intwidth;
-				int intStartx = 640 - (intTotalwidth / 2);
-			
-				con.drawString(strname, intStartx, 370);
-				con.repaint();
 			}
+			
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 340, 1280, 50);
+			
+			con.setDrawColor(Color.WHITE);			
+			int intwidth = 12;
+			int intTotalwidth = strname.length() * intwidth;
+			int intStartx = 640 - (intTotalwidth / 2);
+			
+			con.drawString(strname, intStartx, 370);
+			con.repaint();
 		}
 		
+		//quiz selection
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.repaint();
@@ -145,32 +153,70 @@ public class CPTHailey1{
 		con.repaint();
 		
 		con.sleep(500);
-		char chrQuiz = con.getChar();
 		
-		int intPick = chrQuiz - '0';
+		//quiz selection input
+		boolean blnQuizchoice = false;
+		int intPick = 0;
 		
-		if(intPick >= 1 && intPick <= strquizNames.length){
-			String strChoice = strquizNames[intPick - 1];
+		while(blnQuizchoice == false){
+			char chrQuiz = con.getChar();
+			//google says char --> int, subtract '0' for digits 0-9
+			intPick = chrQuiz - '0';
 			
-			con.setDrawColor(Color.BLACK);
-			con.fillRect(0, 0, 1280, 720);
-			con.setDrawColor(Color.WHITE);
+			if(intPick >= 1 && intPick <= strquizNames.length){
+				String strChoice = strquizNames[intPick - 1];
 			
-			TextInputFile quiz = new TextInputFile(strChoice);
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0, 0, 1280, 720);
+				con.setDrawColor(Color.WHITE);
 			
-			int inty2 = 100;
+				TextInputFile quiz = new TextInputFile(strChoice);
 			
-			while(quiz.eof() == false){
-				String strLine2 = quiz.readLine();
-				con.drawString(strLine2, 100, inty2);
-				inty2 += 30;
+				int inty2 = 100;
+				
+				while(quiz.eof() == false){
+					String strLine2 = quiz.readLine();
+					con.drawString(strLine2, 100, inty2);
+					inty2 += 30;
+				}
+				
+				quiz.close();
+				con.repaint();
+				blnQuizchoice = true;
+			
+			}else{
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(598, 600, 300, 40);
+				con.setDrawColor(Color.WHITE);
+				con.drawString("INVALID", 598, 600);
+				con.repaint();
 			}
-			quiz.close();
-			con.repaint();
-		}else{
-			con.drawString("INVALID", 100, 600);
-			con.repaint();
 		}
+		String strChoice = strquizNames[intPick - 1];
+		
+		//Quiz into array
+		
+		TextInputFile Loadquiz = new TextInputFile(strChoice);
+		int intLineCount = 0;
+		
+		while(Loadquiz.eof() == false){
+			Loadquiz.readLine();
+			intLineCount++;
+		}
+		
+		Loadquiz.close();
+		
+		int intQuestions = intLineCount / 6;
+		String strquizInfo[][] = new String[intQuestions][7];
+		
+		TextInputFile Loadquiz2 = new TextInputFile(strChoice);
+		
+		for(int intcount2 = 0; intcount2 < intQuestions; intcount2++){
+			for(int intcount3 = 0; intcount3 < 6; intcount3++){
+				strquizInfo[intcount2][intcount3] = Loadquiz2.readLine();
+			}
+		}
+		
+		Loadquiz2.close();
 	}
 }
-
