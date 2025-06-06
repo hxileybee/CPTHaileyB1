@@ -192,7 +192,12 @@ public class CPTHailey1{
 				con.repaint();
 			}
 		}
+		
 		String strChoice = strquizNames[intPick - 1];
+		
+		if(strChoice.charAt(strChoice.length() - 1) == '\n'){
+			strChoice = strChoice.substring(0, strChoice.length() - 1);
+		}
 		
 		//Quiz into array
 		
@@ -218,5 +223,43 @@ public class CPTHailey1{
 		}
 		
 		Loadquiz2.close();
+		
+		//random numbers in last column
+		for(int intcount4 = 0; intcount4 < intQuestions; intcount4++){
+			int intRandom = (int)(Math.random() * 100);
+			strquizInfo[intcount4][6] = "" + intRandom;
+		}
+		
+		//bubble sorting column 6
+		for(int intcount5 = 0; intcount5 < intQuestions - 1; intcount5++){
+			for(int intcount6 = 0; intcount6 < intQuestions - intcount5 - 1; intcount6++){
+				int intNum3 = Integer.parseInt(strquizInfo[intcount6][6]);
+				int intNum4 = Integer.parseInt(strquizInfo[intcount6 + 1][6]);
+				
+				if(intNum3 > intNum4){
+					String strTemp[] = strquizInfo[intcount6];
+					strquizInfo[intcount6] = strquizInfo[intcount6 + 1];
+					strquizInfo[intcount6 + 1] = strTemp;
+				}
+			}
+		}
+		
+		int intScore = 0;
+		int intDone = 0;
+		
+		for(int intcount7 = 0; intcount7 < intQuestions; intcount7++){
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 1280, 720);
+			con.setDrawColor(Color.WHITE);
+			
+			int inty3 = 100;
+			
+			for(int intcount8 = 0; intcount8 < 5; intcount8++){
+				con.drawString(strquizInfo[intcount7][intcount8], 100, inty3);
+				inty3 += 40;
+			}
+			
+			con.repaint();
+		}
 	}
 }
