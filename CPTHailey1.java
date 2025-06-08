@@ -37,7 +37,6 @@ public class CPTHailey1{
 					con.sleep(1000);
 					
 					playgame(con);
-					blnMenu = false;
 				}else if(chrInput == '2'){//leaderboard
 					con.setDrawColor(Color.BLACK);
 					con.fillRect(0, 0, 1280, 720);
@@ -252,6 +251,17 @@ public class CPTHailey1{
 			con.fillRect(0, 0, 1280, 720);
 			con.setDrawColor(Color.WHITE);
 			
+			int intPercent = 0;
+			
+			if(intDone > 0){
+				intPercent = (intScore * 100) / intDone;
+			}
+			
+			//Header (name, score, percent)
+			String strHeader = strname +" - " +strChoice +", Score: " +intScore +"/" +intDone +" (" +intPercent +"%)";
+			con.drawString(strHeader, 450, 40);
+			
+			//Showing/Drawing question and options
 			int inty3 = 100;
 			
 			for(int intcount8 = 0; intcount8 < 5; intcount8++){
@@ -260,6 +270,105 @@ public class CPTHailey1{
 			}
 			
 			con.repaint();
+			
+			//Getting answer
+			con.setDrawColor(Color.WHITE);
+			con.drawString("YOUR ANSWER: ", 100, 300);
+			con.drawString("TYPE THE TEXT AFTER THE COLON AS YOUR ANSWER", 100, 500);
+			con.drawString("EXAMPLE - A: purple, you would type 'purple' only", 100, 550);
+			con.repaint();
+			
+			String strAnswer = "";
+			char chrInput;
+			boolean blnAnswered = false;
+			
+			while(!blnAnswered){
+				chrInput = con.getChar();
+				
+				if(chrInput == '\n'){
+					blnAnswered = true;
+				}else if(chrInput == '\b'){
+					if(strAnswer.length() > 0){
+						strAnswer = strAnswer.substring(0, strAnswer.length() - 1);
+					}
+				}else if(chrInput >= 32 && chrInput <= 126){
+					strAnswer += chrInput;
+				}
+				
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(300, 300, 400, 40);
+				con.setDrawColor(Color.WHITE);
+				con.drawString(strAnswer, 300, 300);
+				con.repaint();
+			}
+			
+			//Comparing input to actual answer
+			String strCorrectAnswer = strquizInfo[intcount7][5];
+			
+			String strFull = "";
+			int intColon = -1;
+			boolean blnColon = false;
+			
+			for(int intNum3 = 0; intNum3 < strCorrectAnswer.length() && !blnColon; intNum3++){
+				if(strCorrectAnswer.charAt(intNum3) == ':' && intNum3 + 2 < strCorrectAnswer.length()){
+					intColon = intNum3;
+					strFull = strCorrectAnswer.substring(intNum3 + 2);
+					blnColon = true;
+				}
+			}
+		
+			if(strAnswer.equalsIgnoreCase(strFull)){
+				intScore++;
+				con.setDrawColor(Color.WHITE);
+				con.drawString("CORRECT", 100, 350);
+			}else{
+				con.setDrawColor(Color.WHITE);
+				con.drawString("INCORRECT, " +strCorrectAnswer, 100, 350);
+			}
+			
+			intDone++;
+			con.repaint();
+			con.sleep(1000);
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(300, 350, 600, 40);
+		}
+		
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		
+		//Final Percentage
+		int intFinalPercent = 0;
+		
+		if(intDone > 0){
+			intFinalPercent = (intScore * 100) / intDone;
+		}
+		
+		//Adding to leaderboard (file)
+		TextOutputFile leaderboard = new TextOutputFile("Leaderboard.txt", true);
+		leaderboard.println(strname);
+		leaderboard.println(strChoice);
+		leaderboard.println(intFinalPercent);
+		
+		leaderboard.close();
+		
+		con.setDrawColor(Color.WHITE);
+		con.drawString("QUIZ COMPLETE! YOUR SCORE: " +intScore +"/" +intDone, 460, 275);
+		con.drawString("YOU HAVE BEEN ADDED TO THE LEADERBOARD", 424, 360);
+		con.drawString("PRESS ENTER TO RETURN TO THE MAIN MENU", 424, 350);
+		con.repaint();
+		con.sleep(2000);
+		
+		//Back to main screen
+		char chrLeave = con.getChar();
+		
+		if(chrLeave == '\n'){
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 1280, 720);
+			con.setDrawColor(Color.WHITE);
+			con.drawString("RETURNING TO MAIN MENU...", 500, 250);
+			con.repaint();
+			con.sleep(2000);
 		}
 	}
 }
+
