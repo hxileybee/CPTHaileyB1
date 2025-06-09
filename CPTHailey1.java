@@ -438,7 +438,7 @@ public class CPTHailey1{
 		
 		for(int intcount3 = 0; intcount3 < intLeader; intcount3++){
 			con.drawString(strLeaderboard[intcount3][0] +" - " +strLeaderboard[intcount3][1] +" - " +dblPercents[intcount3], 430, inty);
-			inty += 50;
+			inty += 30;
 		}
 		
 		con.drawString("PRESS ENTER TO RETURN TO THE MAIN MENU", 405, 600);
