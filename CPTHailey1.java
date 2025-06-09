@@ -47,7 +47,7 @@ public class CPTHailey1{
 					con.repaint();
 					con.sleep(1000);
 					
-					blnMenu = false;
+					leaderboard(con);
 				}else if(chrInput == '3'){//add a quiz
 					con.setDrawColor(Color.BLACK);
 					con.fillRect(0, 0, 1280, 720);
@@ -58,7 +58,7 @@ public class CPTHailey1{
 					con.repaint();
 					con.sleep(1000);
 					
-					blnMenu = false;
+					addquiz(con);
 				}else if(chrInput == '4'){//closes window
 					con.closeConsole();
 				}
@@ -98,7 +98,7 @@ public class CPTHailey1{
 			}
 			
 			con.setDrawColor(Color.BLACK);
-			con.fillRect(0, 340, 1280, 50);
+			con.fillRect(0, 340, 1280, 80);
 			
 			con.setDrawColor(Color.WHITE);			
 			int intwidth = 12;
@@ -193,11 +193,11 @@ public class CPTHailey1{
 		}
 		
 		String strChoice = strquizNames[intPick - 1];
-		
+		System.out.println("before" +strChoice);
 		if(strChoice.charAt(strChoice.length() - 1) == '\n'){
 			strChoice = strChoice.substring(0, strChoice.length() - 1);
 		}
-		
+		System.out.println("after" +strChoice);
 		//Quiz into array
 		
 		TextInputFile Loadquiz = new TextInputFile(strChoice);
@@ -353,7 +353,7 @@ public class CPTHailey1{
 		
 		con.setDrawColor(Color.WHITE);
 		con.drawString("QUIZ COMPLETE! YOUR SCORE: " +intScore +"/" +intDone, 460, 275);
-		con.drawString("YOU HAVE BEEN ADDED TO THE LEADERBOARD", 424, 360);
+		con.drawString("YOU HAVE BEEN ADDED TO THE LEADERBOARD", 424, 312);
 		con.drawString("PRESS ENTER TO RETURN TO THE MAIN MENU", 424, 350);
 		con.repaint();
 		con.sleep(2000);
@@ -365,7 +365,109 @@ public class CPTHailey1{
 			con.setDrawColor(Color.BLACK);
 			con.fillRect(0, 0, 1280, 720);
 			con.setDrawColor(Color.WHITE);
-			con.drawString("RETURNING TO MAIN MENU...", 500, 250);
+			con.drawString("RETURNING TO MAIN MENU...", 500, 360);
+			con.repaint();
+			con.sleep(2000);
+		}
+	}
+	public static void leaderboard(Console con){
+		//clear screen
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		
+		//load leaderboard file into 2D array
+		TextInputFile leaderboard2 = new TextInputFile("Leaderboard.txt");
+		
+		String strNames;
+		String strQuizName;
+		double dblPercentage;
+		int intLeader = 0;
+		
+		while(leaderboard2.eof() == false){
+			strNames = leaderboard2.readLine();
+			strQuizName = leaderboard2.readLine();
+			dblPercentage = leaderboard2.readDouble();
+			intLeader++;
+		}
+		
+		leaderboard2.close();
+		
+		String strLeaderboard[][] = new String[intLeader][2];
+		double dblPercents[] = new double[intLeader];
+		
+		TextInputFile leaderboard3 = new TextInputFile("Leaderboard.txt");
+		
+		int intRow = 0;
+		
+		while(leaderboard3.eof() == false){
+			String strNames2 = leaderboard3.readLine();
+			String strQuizName2 = leaderboard3.readLine();
+			double dblPercentage2 = leaderboard3.readDouble();
+			
+			strLeaderboard[intRow][0] = strNames2;
+			strLeaderboard[intRow][1] = strQuizName2;
+			dblPercents[intRow] = dblPercentage2;
+			
+			intRow++;
+		}
+		
+		leaderboard3.close();
+		
+		//sort by highest percentage
+		for(int intcount = 0; intcount < intLeader - 1; intcount++){
+			for(int intcount2 = 0; intcount2 < intLeader - intcount - 1; intcount2++){
+				if(dblPercents[intcount2] < dblPercents[intcount2 + 1]){
+					double dblTemp = dblPercents[intcount2];
+					dblPercents[intcount2] = dblPercents[intcount2 + 1];
+					dblPercents[intcount2 + 1] = dblTemp;
+					
+					String strTemp[] = strLeaderboard[intcount2];
+					strLeaderboard[intcount2] = strLeaderboard[intcount2 + 1];
+					strLeaderboard[intcount2 + 1] = strTemp;
+				}
+			}
+		}
+		
+		//display on screen (name - quiz - score)
+		
+		con.setDrawColor(Color.WHITE);
+		con.drawString("LEADERBOARD", 565, 100);
+		con.repaint();
+	
+		int inty = 150;
+		
+		for(int intcount3 = 0; intcount3 < intLeader; intcount3++){
+			con.drawString(strLeaderboard[intcount3][0] +" - " +strLeaderboard[intcount3][1] +" - " +dblPercents[intcount3], 430, inty);
+			inty += 50;
+		}
+		
+		con.drawString("PRESS ENTER TO RETURN TO THE MAIN MENU", 405, 600);
+		con.repaint();
+		con.sleep(500);
+		
+		//Back to main screen
+		char chrLeave = con.getChar();
+		
+		if(chrLeave == '\n'){
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 1280, 720);
+			con.setDrawColor(Color.WHITE);
+			con.drawString("RETURNING TO MAIN MENU...", 500, 360);
+			con.repaint();
+			con.sleep(2000);
+		}
+	}
+	public static void addquiz(Console con){
+		//code goes here :P
+		
+		//Back to main screen
+		char chrLeave = con.getChar();
+		
+		if(chrLeave == '\n'){
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 1280, 720);
+			con.setDrawColor(Color.WHITE);
+			con.drawString("RETURNING TO MAIN MENU...", 500, 360);
 			con.repaint();
 			con.sleep(2000);
 		}
