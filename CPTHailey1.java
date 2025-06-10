@@ -79,7 +79,6 @@ public class CPTHailey1{
 		con.repaint();
 		
 		//entering name code (center of screen-ish)
-		//try to fix overlap + streaking
 		String strname = "";
 		char chrLetter;
 		boolean blnName = true;
@@ -93,7 +92,7 @@ public class CPTHailey1{
 				if(strname.length() > 0){
 					strname = strname.substring(0, strname.length() - 1);
 				}
-			}else{
+			}else if(chrLetter >= 32 && chrLetter <= 126){
 				strname += chrLetter;
 			}
 			
@@ -275,7 +274,7 @@ public class CPTHailey1{
 			con.setDrawColor(Color.WHITE);
 			con.drawString("YOUR ANSWER: ", 100, 300);
 			con.drawString("TYPE THE TEXT AFTER THE COLON AS YOUR ANSWER", 100, 500);
-			con.drawString("EXAMPLE - A: purple, you would type 'purple' only", 100, 550);
+			con.drawString("EXAMPLE - A: purple, red, you would type 'purple, red' only; INCLUDE PUNCTUATION", 100, 550);
 			con.repaint();
 			
 			String strAnswer = "";
@@ -326,9 +325,10 @@ public class CPTHailey1{
 				con.drawString("INCORRECT, " +strCorrectAnswer, 100, 350);
 			}
 			
+			con.drawString("LOADING NEXT QUESTION...", 100, 400);
 			intDone++;
 			con.repaint();
-			con.sleep(1000);
+			con.sleep(1500);
 			con.setDrawColor(Color.BLACK);
 			con.fillRect(300, 350, 600, 40);
 		}
@@ -459,18 +459,69 @@ public class CPTHailey1{
 	}
 	public static void addquiz(Console con){
 		//code goes here :P
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
 		
-		//Back to main screen
-		char chrLeave = con.getChar();
+		con.setDrawColor(Color.WHITE);
+		con.drawString("WHAT IS THE NAME OF YOUR QUIZ?", 450, 200);
+		con.drawString("ADD '.txt' TO THE END OF YOUR NAME", 420, 250);
+		con.drawString("EXAMPLE: Movies.txt", 505, 300);
+		con.repaint();
 		
-		if(chrLeave == '\n'){
+		//entering quiz name code (center of screen-ish)
+		//reuse code from above for reference :P
+		String strquizname = "";
+		char chrLetter;
+		boolean blnName = true;
+		
+		while(blnName){
+			chrLetter = con.getChar();
+			
+			if(chrLetter == '\n'){
+				blnName = false;
+			}else if(chrLetter == '\b'){//google says backspace is \b
+				if(strquizname.length() > 0){
+					strquizname = strquizname.substring(0, strquizname.length() - 1);
+				}
+			}else if(chrLetter >= 32 && chrLetter <= 126){
+				strquizname += chrLetter;
+			}
+			
 			con.setDrawColor(Color.BLACK);
-			con.fillRect(0, 0, 1280, 720);
-			con.setDrawColor(Color.WHITE);
-			con.drawString("RETURNING TO MAIN MENU...", 500, 360);
+			con.fillRect(0, 340, 1280, 80);
+			
+			con.setDrawColor(Color.WHITE);			
+			int intwidth = 12;
+			int intTotalwidth = strquizname.length() * intwidth;
+			int intStartx = 640 - (intTotalwidth / 2);
+			
+			con.drawString(strquizname, intStartx, 370);
 			con.repaint();
-			con.sleep(2000);
 		}
+		
+		if(strquizname.length() < 4 || strquizname.substring(strquizname.length()-4, strquizname.length()) != ".txt"){
+			strquizname = strquizname + ".txt";
+		}
+		
+		//add that quiz name to Quizzes.txt
+		TextOutputFile quizFile = new TextOutputFile("Quizzes.txt", true);
+		
+		quizFile.println(strquizname);
+		
+		quizFile.close();
+		
+		//then ask if they have a question to add
+		
+		//ask for the question, A, B, C, D 
+		//and the real answer
+		
+		
+		//then add that to the file with that name
+		
+		
+		//clear screen + text	
+		
+		
 	}
 }
 
