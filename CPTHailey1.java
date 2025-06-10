@@ -192,11 +192,11 @@ public class CPTHailey1{
 		}
 		
 		String strChoice = strquizNames[intPick - 1];
-		System.out.println("before" +strChoice);
+		
 		if(strChoice.charAt(strChoice.length() - 1) == '\n'){
 			strChoice = strChoice.substring(0, strChoice.length() - 1);
 		}
-		System.out.println("after" +strChoice);
+		
 		//Quiz into array
 		
 		TextInputFile Loadquiz = new TextInputFile(strChoice);
