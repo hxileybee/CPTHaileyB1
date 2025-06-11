@@ -564,6 +564,7 @@ public class CPTHailey1{
 		TextOutputFile quizFile2 = new TextOutputFile(strquizname, true);
 		
 		boolean blnAnswer = true;
+		boolean blnAdded = false;
 		
 		while(blnAnswer){
 			con.setDrawColor(Color.BLACK);
@@ -571,6 +572,11 @@ public class CPTHailey1{
 			con.setDrawColor(Color.WHITE);
 			con.drawString("DO YOU HAVE A QUESTION TO ADD?", 442, 240);
 			con.drawString("PRESS 'Y' FOR YES, PRESS 'N' FOR NO", 415, 480);
+			
+			if(!blnAdded){
+				con.drawString("YOU MUST ADD AT LEAST ONE QUESTION", 420, 520);
+			}
+			
 			con.repaint();
 			
 			char chrChoice = con.getChar();
@@ -587,9 +593,10 @@ public class CPTHailey1{
 				
 				con.setDrawColor(Color.BLACK);
 				con.fillRect(0, 0, 1280, 720);
+				con.repaint();
 				
 				con.setDrawColor(Color.WHITE);
-				con.drawString("ADD THE LETTER AFTER YOUR ANSWER, EXAMPLE: ANSWER: purple, A/B/C/D", 100, 100);
+				con.drawString("ADD THE LETTER AFTER YOUR ANSWER, EXAMPLE: ANSWER: purple, A OR ANSWER: yellow, D", 100, 100);
 				con.drawString("IF YOU DO NOT ADD THE LETTER, ALL YOUR ANSWERS WHEN PLAYING WILL COME OUT INCORRECT", 100, 120);
 				con.drawString("QUESTION: ", 100, 160);
 				con.drawString("A: ", 100, 200);
@@ -598,8 +605,8 @@ public class CPTHailey1{
 				con.drawString("D: ", 100, 320);
 				con.drawString("ANSWER: ", 100, 360);
 				con.drawString("PRESS ENTER AFTER TYPING EACH LINE TO SUBMIT YOUR TEXT", 100, 450);
-				con.drawString("AFTER SUBMITTING YOUR 'REAL' ANSWER, YOU WILL BE PROMPTED TO WRITE", 100, 490);
-				con.drawString("ANOTHER QUESTION OR FINISH YOUR QUIZ AND ADD IT TO THE LIST OF QUIZZES", 100, 520);
+				con.drawString("AFTER SUBMITTING YOUR 'REAL' ANSWER, YOU WILL BE PROMPTED TO WRITE ANOTHER QUESTION OR", 100, 500);
+				con.drawString("FINISH YOUR QUIZ AND ADD IT TO THE LIST OF QUIZZES", 100, 530);
 				con.repaint();
 				
 				//get question input
@@ -745,7 +752,9 @@ public class CPTHailey1{
 				quizFile2.println("D: " +strD);
 				quizFile2.println("Answer: " +strCorrect);
 				
-			}else if(chrChoice == 'n' || chrChoice == 'N'){
+				blnAdded = true;
+				
+			}else if((chrChoice == 'n' || chrChoice == 'N') && blnAdded){
 				blnAnswer = false;
 				
 				con.setDrawColor(Color.BLACK);
