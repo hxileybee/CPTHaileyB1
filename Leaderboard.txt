@@ -17,9 +17,6 @@ glurpy
 Transformers.txt
 41
 brat
-Basketball.txt
-97.8
-brat
 Transformers.txt
 83
 mich
@@ -28,3 +25,6 @@ Disney.txt
 kav
 Disney.txt
 100
+statitan
+Basketball.txt
+93

@@ -74,7 +74,7 @@ public class CPTHailey1{
 					con.sleep(1000);
 					
 					help(con);
-				}else if(chrInput == 'j' || chrInput == 'J'){
+				}else if(chrInput == 's' || chrInput == 'S'){
 					con.setDrawColor(Color.BLACK);
 					con.fillRect(0, 0, 1280, 720);
 					con.repaint();
@@ -103,7 +103,6 @@ public class CPTHailey1{
 		con.repaint();
 		
 		//entering name code (center of screen-ish)
-		Color neonGreen = new Color(57, 255, 20);
 		
 		String strname = "";
 		char chrLetter;
@@ -136,7 +135,7 @@ public class CPTHailey1{
 		
 		boolean blnBrat = false;
 		
-		if(strname.equalsIgnoreCase("brat")){
+		if(strname.equalsIgnoreCase("statitan")){
 			blnBrat = true;
 		}
 		
@@ -277,7 +276,7 @@ public class CPTHailey1{
 		int intScore = 0;
 		
 		if(blnBrat){
-			intScore += 3.65;
+			intScore += 3;
 		}
 		
 		int intDone = 0;
@@ -297,12 +296,12 @@ public class CPTHailey1{
 			String strHeader = strname +" - " +strChoice +", Score: " +intScore +"/" +intDone +" (" +intPercent +"%)";
 			
 			if(blnBrat){
-				con.setDrawColor(neonGreen);
+				con.setDrawColor(Color.RED);
 			}else{
 				con.setDrawColor(Color.WHITE);
 			}
 			
-			con.drawString(strHeader, 450, 40);
+			con.drawString(strHeader, 100, 40);
 			con.setDrawColor(Color.WHITE);
 			
 			//Showing/Drawing question and options
