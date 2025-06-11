@@ -3,70 +3,70 @@ A: ABCs
 B: Asphyxiation
 C: AED
 D: Angina
-Answer: ABCs
+Answer: ABCs, A
 Question: What is the order for CPR on land?
 A: 2 breaths
 B: 30 compressions, 2 breaths
 C: 2 breaths, 30 compressions
 D: 30 compressions
-Answer: 30 compressions, 2 breaths
+Answer: 30 compressions, 2 breaths, B
 Question: What is the order for CPR after being in water?
 A: 2 breaths
 B: 30 compressions, 2 breaths
 C: 2 breaths, 30 compressions 
 D: 30 compressions
-Answer: 2 breaths, 30 compressions
+Answer: 2 breaths, 30 compressions, C
 Question: What do you do if someone bleeds through their bandages?
 A: Nothing
 B: Remove the old ones and tell them to apply pressure directly to the wound
 C: Remove the old ones and rewrap the injury
 D: Put more bandages on top
-Answer: Put more bandages on top
+Answer: Put more bandages on top, D
 Question: What does the "L" in SAMPLE mean?
 A: Last thing you ate
 B: Lifesaving
 C: Leave the area
 D: Last thing you saw
-Answer: Last thing you ate
+Answer: Last thing you ate, A
 Question: How do you do CPR on an infant?
 A: Jump on them
 B: 2 fingers
 C: One hand
 D: Two hands
-Answer: 2 fingers
+Answer: 2 fingers, B
 Question: What do you do if someone is having a seizure?
 A: Grab them
 B: Put something in their mouth
 C: Clear the area so they won't hit anything
 D: Hold them down to the ground
-Answer: Clear the area so they wont hit anything
+Answer: Clear the area so they wont hit anything, C
 Question: Where do the patches of an AED go on an adult?
 A: In the middle of the chest and the back
 B: On top of one another over the heart
 C: On both sides of the stomach
 D: On the upper right chest and on the left below the armpit
-Answer: On the upper right chest and on the left below the armpit
+Answer: On the upper right chest and on the left below the armpit, D
 Question: How do you open someone's airway?
 A: Head tilt, chin lift
 B: Head lift, chin tilt
 C: The airway is always open
 D: Move the head around a bit
-Answer: Head tilt, chin lift
+Answer: Head tilt, chin lift, A
 Question: If you are alone and saving someone from drowning, when should you call EMS?
 A: Immediately when identifying the situation
 B: After 2 minutes
 C: After 5 minutes
 D: Wait for someone else to show up and they can call
-Answer: After 2 minutes
+Answer: After 2 minutes, B
 Question: Which heart rhythm can an AED shock?
 A: Asystole
 B: Pulseless Electrical Activity
 C: Ventricular Fibrillation and Pulseless Ventricular Tachycardia
 D: All of them
-Answer: Ventricular Fibrillation and Pulseless Ventricular Tachycardia
+Answer: Ventricular Fibrillation and Pulseless Ventricular Tachycardia, C
 Question: When do you need to renew a lifeguard certification?
 A: Never
 B: Every year
 C: Every three years
 D: Every two years
-Answer: Every two years
+Answer: Every two years, D

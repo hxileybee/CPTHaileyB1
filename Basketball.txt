@@ -3,94 +3,94 @@ A: Lebron James
 B: Steph Curry
 C: Kyle Lowry
 D: LaMelo Ball
-Answer: Lebron James
+Answer: Lebron James, A
 Question: What year did the Raptors most recently win the NBA championships?
 A: 2016
 B: 2019
 C: 2025
 D: 2022
-Answer: 2019
+Answer: 2019, B
 Question: What do the letters NBA stand for?
 A: Names, Balls, Athletes
 B: Nobodies Bounce Around
 C: National Basketball Association
 D: New Basketball Association
-Answer: National Basketball Association
+Answer: National Basketball Association, C
 Question: How many fouls are needed to get ejected from a game?
 A: 3
 B: 4
 C: 5
 D: 6
-Answer: 6
+Answer: 6, D
 Question: How many points does Steph Curry have (in total)?
 A: 25 386
 B: 42 184
 C: 33 785
 D: 15 678
-Answer: 25 386
+Answer: 25 386, A
 Question: How long are NBA quarters?
 A: 10 minutes
 B: 12 minutes
 C: 8 minutes
 D: 20 minutes
-Answer: 12 minutes
+Answer: 12 minutes, B
 Question: Which player has won the most NBA titles?
 A: Larry Bird
 B: Shaquille O'Neal
 C: Bill Russell
 D: Dennis Rodman
-Answer: Bill Russell
+Answer: Bill Russell, C
 Question: What team did Kobe Bryant play for?
 A: The Toronto Raptors
 B: Indiana Pacers
 C: New York Knicks
 D: Los Angeles Lakers
-Answer: Los Angeles Lakers
+Answer: Los Angeles Lakers, D
 Question: Which womens player has brought a lot of eyes to college basketball?
 A: Caitlin Clark
 B: Angel Reese
 C: Audi Crooks
 D: Raegan McCowan
-Answer: Caitlin Clark
+Answer: Caitlin Clark, A
 Question: What year was the first ever NBA game?
 A: 1950
 B: 1946
 C: 2000
 D: 1975
-Answer: 1946
+Answer: 1946, B
 Question: Which team won the first NBA championship?
 A: Chicago Bulls
 B: Cleveland Cavaliers
 C: Philadelphia Warriors
 D: Los Angeles Lakers
-Answer: Philadelphia Warriors
+Answer: Philadelphia Warriors, C
 Question: How many players are on the court for one team during a basketball game?
 A: 4
 B: 6
 C: 7
 D: 5
-Answer: 5
+Answer: 5, D
 Question: What is the maximum number of points attainable on a single shot?
 A: 3
 B: 4
 C: 1
 D: 2
-Answer: 3
+Answer: 3, A
 Question: Where was basketball invented?
 A: Chicago, Illinois
 B: Springfield, Massachusetts
 C: Toronto, Ontario
 D: New York City, New York
-Answer: Springfield, Massachusetts
+Answer: Springfield, Massachusetts, B
 Question: How long is a standard NBA game (no overtime)?
 A: 40 minutes
 B: 32 minutes
 C: 48 minutes
 D: 60 minutes
-Answer: 48 minutes
+Answer: 48 minutes, C
 Question: What is it called when a ball is touched on its way down toward the basket by defense?
 A: Charging
 B: Traveling
 C: Double dribble
 D: Goaltending
-Answer: Goaltending
+Answer: Goaltending, D

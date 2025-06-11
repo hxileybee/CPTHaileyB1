@@ -3,70 +3,70 @@ A: Darhos
 B: Cybertron
 C: Akalo
 D: Jormungandr
-Answer: Cybertron
+Answer: Cybertron, B
 Question: Who wants to take over the Decepticons?
 A: Snap Trap
 B: Typticon
 C: Astrotrain
 D: Starscream
-Answer: Starscream
+Answer: Starscream, D
 Question: Which Autobot was first seen as a 1977 Chevrolet Camaro Z28?
 A: Mirage
 B: Sideswipe
 C: Bumblebee
 D: Ironhide
-Answer: Bumblebee
+Answer: Bumblebee, C
 Question: Who is the leader of the Autobots?
 A: Optimus Prime
 B: Bumblebee
 C: Sentinel Prime
 D: Ratchet
-Answer: Optimus Prime
+Answer: Optimus Prime, A
 Question: What was the most recent Transformers movie?
 A: Transformers: Dark of the Moon
 B: Transformers: Rise of the Beasts
 C: Transformers One
 D: Transformers: Age of Extinction
-Answer: Transformers One
+Answer: Transformers One, C
 Question: In the original cartoon, what resource are the Decepticons after?
 A: Water
 B: Energon
 C: Oil
 D: Mayalx
-Answer: Energon
+Answer: Energon, B
 Question: What was Sam Witwicky's eBay username in the first Transformers movie?
 A: walmartsecurity11
 B: hugh_jass
 C: ladiesman217
 D: shaquille.oatmeal
-Answer: ladiesman217
+Answer: ladiesman217, C
 Question: Which Decepticon has minions Laserbeak and Ravage?
 A: Megatron
 B: Bonecrusher
 C: Cyclonus
 D: Soundwave
-Answer: Soundwave
+Answer: Soundwave, D
 Question: When did the original Transformers cartoon come out?
 A: 1984
 B: 2000
 C: 1952
 D: 2010
-Answer: 1984
+Answer: 1984, A
 Question: Who was one of the main antagonists in Transformers: The Last Knight?
 A: Starscream
 B: Galvatron
 C: The Fallen
 D: Quintessa
-Answer: Quintessa
+Answer: Quintessa, D
 Question: Which Autobot can turn into a dinosaur?
 A: Grimlock
 B: Barricade
 C: Bumblebee
 D: Starscream
-Answer: Grimlock
+Answer: Grimlock, A
 Question: Which Autobot is the resident medic?
 A: Jazz
 B: Sideswipe
 C: Wheeljack
 D: Ratchet
-Answer: Ratchet
+Answer: Ratchet, D

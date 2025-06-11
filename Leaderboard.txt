@@ -19,3 +19,9 @@ Transformers.txt
 brat
 Basketball.txt
 97.8
+brat
+Transformers.txt
+83
+mich
+Disney.txt
+75

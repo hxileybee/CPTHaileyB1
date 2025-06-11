@@ -1,0 +1,96 @@
+Question: Who is Ariel's best friend in the Little Mermaid?
+A: Flounder
+B: Triton
+C: Sebastian
+D: Scuttle
+Answer: Flounder, A
+Question: Which Princess has a pet tiger named Rajah?
+A: Mulan
+B: Jasmine
+C: Pocahontas
+D: Aurora
+Answer: Jasmine, B
+Question: What does Cinderella leave behind at the ball?
+A: Necklace
+B: Glove
+C: Shoe
+D: Tiara
+Answer: Shoe, C
+Question: Who is the only non-royal princess by birth or marriage?
+A: Tiana
+B: Belle
+C: Cinderella
+D: Mulan
+Answer: Mulan, D
+Question: What is the name of Elsa and Anna's kingdom?
+A: Arendelle
+B: Arendellia
+C: Andora
+D: Avalor
+Answer: Arendelle, A
+Question: What is the name of Mulan's horse?
+A: Shan
+B: Khan
+C: Mushu
+D: Ping
+Answer: Khan, B
+Question: What is the name of the prince in Sleeping Beauty?
+A: Prince Charming
+B: Prince Eric
+C: Prince Phillip
+D: Prince Edward
+Answer: Prince Phillip, C
+Question: What type of animal is Pascal in Tangled?
+A: Frog
+B: Lizard
+C: Gecko
+D: Chameleon
+Answer: Chameleon, D
+Question: What are Ursula's eel henchmen named?
+A: Flotsam and Jetsam
+B: Spike and Fang
+C: Ebb and Flow
+D: Pinch and Panic
+Answer: Flotsam and Jetsam, A
+Question: What is the name of the horse in Tangled?
+A: Achilles
+B: Maximus
+C: Samson
+D: Leonardo
+Answer: Maximus, B
+Question: Who is Jafar's sidekick?
+A: Pascal
+B: Raven
+C: Iago
+D: Idris
+Answer: Iago, C
+Question: What is the name of the Pub in Tangled?
+A: The Rusty Lantern
+B: The Crooked Crown
+C: The Lumpy Lion
+D: The Snuggly Duckling
+Answer: The Snuggly Duckling, D
+Question: What are the names of the three good fairies in Sleeping Beauty?
+A: Flora, Fauna, and Merryweather
+B: Celeste, Spring, and Dawn
+C: Blossom, Hazel, and Dewdrop
+D: Lilac, Fern, and Sky
+Answer: Flora, Fauna, and Merryweather, A
+Question: What is the name of the prince in Snow White?
+A: Prince Ferdinand
+B: Prince Florian
+C: Prince Edward
+D: Prince Rupert
+Answer: Prince Florian, B
+Question: What magic item lets Belle see faraway places in Beauty and the Beast?
+A: A crystal ball
+B: A book
+C: A mirror
+D: A rose petal
+Answer: A mirror, C
+Question: What is the name of the feather duster in Beauty and the Beast?
+A: Colette
+B: Babette
+C: Amelie
+D: Plumette
+Answer: Plumette, D

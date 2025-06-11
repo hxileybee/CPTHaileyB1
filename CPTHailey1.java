@@ -19,9 +19,10 @@ public class CPTHailey1{
 				con.drawString("LEADERBOARD", 558, 220);
 				con.drawString("ADD QUIZ", 575, 260);
 				con.drawString("QUIT", 600, 300);
-				con.drawString("WHAT WOULD YOU LIKE TO DO?", 472, 480);
-				con.drawString("1 - Play, 2 - Leaderboard, 3 - Add, 4 - Quit", 365, 500);
-				con.drawString("PRESS (H) FOR HELP", 520, 550);
+				con.drawString("IF NEEDED LOOK AT THE HELP SCREEN FIRST TO UNDERSTAND THE GAME & CONTROLS", 195, 420);
+				con.drawString("PRESS (H) FOR HELP", 520, 440);
+				con.drawString("WHAT WOULD YOU LIKE TO DO?", 472, 520);
+				con.drawString("1 - Play, 2 - Leaderboard, 3 - Add, 4 - Quit", 365, 560);
 				
 				con.repaint();
 				
@@ -306,8 +307,7 @@ public class CPTHailey1{
 			//Getting answer
 			con.setDrawColor(Color.WHITE);
 			con.drawString("YOUR ANSWER: ", 100, 300);
-			con.drawString("TYPE THE TEXT AFTER THE COLON AS YOUR ANSWER", 100, 500);
-			con.drawString("EXAMPLE - A: purple, red, you would type 'purple, red' only; INCLUDE PUNCTUATION & SPACES", 100, 550);
+			con.drawString("TYPE THE TEXT AFTER THE COLON OR THE CORRESPONDING LETTER AS YOUR ANSWER", 100, 550);
 			con.drawString("ENSURE YOUR TYPED ANSWER MATCHES THE ANSWER LISTED, OR IT WILL BE MARKED AS WRONG", 100, 600);
 			con.repaint();
 			
@@ -337,8 +337,9 @@ public class CPTHailey1{
 			
 			//Comparing input to actual answer
 			String strCorrectAnswer = strquizInfo[intcount7][5];
-			
+						
 			String strFull = "";
+			String strLetter = "";
 			int intColon = -1;
 			boolean blnColon = false;
 			
@@ -346,12 +347,14 @@ public class CPTHailey1{
 				if(strCorrectAnswer.charAt(intNum3) == ':' && intNum3 + 2 < strCorrectAnswer.length()){
 					intColon = intNum3;
 					
-					strFull = strCorrectAnswer.substring(intNum3 + 2);
+					strFull = strCorrectAnswer.substring((intNum3 + 2), (strCorrectAnswer.length() - 3));					
 					blnColon = true;
 				}
 			}
 			
-			if(strAnswer.equalsIgnoreCase(strFull)){
+			strLetter = strCorrectAnswer.substring(strCorrectAnswer.length() - 1);
+			
+			if(strAnswer.equalsIgnoreCase(strFull) || strAnswer.equalsIgnoreCase(strLetter)){
 				intScore++;
 				con.setDrawColor(Color.WHITE);
 				con.drawString("CORRECT", 100, 350);
@@ -499,7 +502,7 @@ public class CPTHailey1{
 		
 		con.setDrawColor(Color.WHITE);
 		con.drawString("WHAT IS THE NAME OF YOUR QUIZ?", 450, 200);
-		con.drawString("EXAMPLE NAMES: Movies, Sports", 505, 250);
+		con.drawString("EXAMPLE NAMES: Movies, Sports, etc", 425, 250);
 		con.repaint();
 		
 		//entering quiz name code (center of screen-ish)
@@ -527,7 +530,7 @@ public class CPTHailey1{
 			con.setDrawColor(Color.WHITE);			
 			int intwidth = 12;
 			int intTotalwidth = strquizname.length() * intwidth;
-			int intStartx = 640 - (intTotalwidth / 2);
+			int intStartx = 620 - (intTotalwidth / 2);
 			
 			con.drawString(strquizname, intStartx, 370);
 			con.repaint();
@@ -575,12 +578,14 @@ public class CPTHailey1{
 				con.fillRect(0, 0, 1280, 720);
 				
 				con.setDrawColor(Color.WHITE);
-				con.drawString("QUESTION: ", 100, 100);
-				con.drawString("A: ", 100, 140);
-				con.drawString("B: ", 100, 180);
-				con.drawString("C: ", 100, 220);
-				con.drawString("D: ", 100, 260);
-				con.drawString("ANSWER: ", 100, 300);
+				con.drawString("ADD THE LETTER AFTER YOUR ANSWER, EXAMPLE: ANSWER: purple, A/B/C/D", 100, 100);
+				con.drawString("IF YOU DO NOT ADD THE LETTER, ALL YOUR ANSWERS WHEN PLAYING WILL COME OUT INCORRECT", 100, 120);
+				con.drawString("QUESTION: ", 100, 160);
+				con.drawString("A: ", 100, 200);
+				con.drawString("B: ", 100, 240);
+				con.drawString("C: ", 100, 280);
+				con.drawString("D: ", 100, 320);
+				con.drawString("ANSWER: ", 100, 360);
 				con.repaint();
 				
 				//get question input
@@ -598,9 +603,9 @@ public class CPTHailey1{
 					}
 					
 					con.setDrawColor(Color.BLACK);
-					con.fillRect(300, 100, 900, 30);
+					con.fillRect(300, 160, 900, 30);
 					con.setDrawColor(Color.WHITE);
-					con.drawString(strQuestion, 300, 100);
+					con.drawString(strQuestion, 300, 160);
 					con.repaint();
 				}
 				
@@ -621,9 +626,9 @@ public class CPTHailey1{
 					}
 					
 					con.setDrawColor(Color.BLACK);
-					con.fillRect(160, 140, 900, 30);
+					con.fillRect(160, 200, 900, 30);
 					con.setDrawColor(Color.WHITE);
-					con.drawString(strA, 160, 140);
+					con.drawString(strA, 160, 200);
 					con.repaint();
 				}
 				
@@ -644,9 +649,9 @@ public class CPTHailey1{
 					}
 					
 					con.setDrawColor(Color.BLACK);
-					con.fillRect(160, 180, 900, 30);
+					con.fillRect(160, 240, 900, 30);
 					con.setDrawColor(Color.WHITE);
-					con.drawString(strB, 160, 180);
+					con.drawString(strB, 160, 240);
 					con.repaint();
 				}
 				
@@ -667,9 +672,9 @@ public class CPTHailey1{
 					}
 					
 					con.setDrawColor(Color.BLACK);
-					con.fillRect(160, 220, 900, 30);
+					con.fillRect(160, 280, 900, 30);
 					con.setDrawColor(Color.WHITE);
-					con.drawString(strC, 160, 220);
+					con.drawString(strC, 160, 280);
 					con.repaint();
 				}
 				
@@ -690,9 +695,9 @@ public class CPTHailey1{
 					}
 					
 					con.setDrawColor(Color.BLACK);
-					con.fillRect(160, 260, 900, 30);
+					con.fillRect(160, 320, 900, 30);
 					con.setDrawColor(Color.WHITE);
-					con.drawString(strD, 160, 260);
+					con.drawString(strD, 160, 320);
 					con.repaint();
 				}
 				
@@ -713,9 +718,9 @@ public class CPTHailey1{
 					}
 					
 					con.setDrawColor(Color.BLACK);
-					con.fillRect(200, 300, 900, 30);
+					con.fillRect(200, 360, 900, 30);
 					con.setDrawColor(Color.WHITE);
-					con.drawString(strCorrect, 200, 300);
+					con.drawString(strCorrect, 200, 360);
 					con.repaint();
 				}
 				
@@ -759,28 +764,29 @@ public class CPTHailey1{
 		//Load text
 		con.drawString("HELP CENTRE", 574, 30);
 		
-		con.drawString("OBJECTIVE:", 100, 100);
-		con.drawString("Answer quiz questions correctly to get the highest score", 100, 130);
+		con.drawString("OBJECTIVE:", 50, 70);
+		con.drawString("Answer quiz questions correctly to get the highest score", 50, 100);
 	
-		con.drawString("HOW TO PLAY:", 100, 160);
-		con.drawString("Select a quiz from the main menu", 100, 190);
-		con.drawString("Answer multiple-choice questions by typing the full answer, not A/B/C/D", 100, 220);
-		con.drawString("Create your own quiz using the 'ADD QUIZ' option", 100, 250);
+		con.drawString("HOW TO PLAY:", 50, 130);
+		con.drawString("Select a quiz from the main menu", 50, 160);
+		con.drawString("Answer multiple-choice questions by typing the full answer or A/B/C/D (respectively)", 50, 190);
+		con.drawString("Create your own quiz using the 'ADD QUIZ' option, follow the instructions for best gameplay", 50, 220);
 	
-		con.drawString("CONTROLS: ", 100, 280);
-		con.drawString("Use the keyboard to type answers", 100, 310);
-		con.drawString("Press ENTER to submit/confirm an answer", 100, 340);
-		con.drawString("Press BACKSPACE to erase characters", 100, 370);
-		con.drawString("Press 1, 2, 3, .. or Y/N when applicable to respond to prompts", 100, 400);
+		con.drawString("CONTROLS: ", 50, 250);
+		con.drawString("Use the keyboard to type answers", 50, 280);
+		con.drawString("Press ENTER to submit/confirm an answer", 50, 310);
+		con.drawString("Press BACKSPACE to erase characters", 50, 340);
+		con.drawString("Press 1, 2, 3, .. or Y/N when applicable to respond to prompts", 50, 370);
 	
-		con.drawString("SCORING:", 100, 430);
-		con.drawString("You earn points for each correct answer", 100, 460);
-		con.drawString("Your final score is shown at the end and saved to the leaderboard", 100, 490);
+		con.drawString("SCORING:", 50, 400);
+		con.drawString("You earn points for each correct answer", 50, 430);
+		con.drawString("Your final score is shown at the end and saved to the leaderboard", 50, 460);
 		
-		con.drawString("NAVIGATION:", 100, 520);
-		con.drawString("Press enter to return to the main menu when prompted", 100, 550);
+		con.drawString("NAVIGATION:", 50, 490);
+		con.drawString("Press enter to return to the main menu when prompted", 50, 520);
 		
-		con.drawString("NOTE: '.txt' will be added to your quiz name, you do not need to type it yourself", 100, 580);
+		con.drawString("NOTE: '.txt' will be added to your quiz name, you do not need to type it yourself", 50, 550);
+		con.drawString("TIP: Enter Charli XCX's most popular album name for bonus points!!", 50, 580);
 		
 		con.drawString("PRESS ENTER TO RETURN TO THE MAIN MENU", 394, 650);
 		con.repaint();
