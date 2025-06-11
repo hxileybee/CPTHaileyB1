@@ -25,3 +25,6 @@ Transformers.txt
 mich
 Disney.txt
 75
+kav
+Disney.txt
+100

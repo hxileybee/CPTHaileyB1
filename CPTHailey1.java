@@ -308,7 +308,8 @@ public class CPTHailey1{
 			con.setDrawColor(Color.WHITE);
 			con.drawString("YOUR ANSWER: ", 100, 300);
 			con.drawString("TYPE THE TEXT AFTER THE COLON OR THE CORRESPONDING LETTER AS YOUR ANSWER", 100, 550);
-			con.drawString("ENSURE YOUR TYPED ANSWER MATCHES THE ANSWER LISTED, OR IT WILL BE MARKED AS WRONG", 100, 600);
+			con.drawString("PRESS ENTER TO SUBMIT YOUR ANSWER THEN WAIT FOR THE NEXT QUESTION TO LOAD", 100, 600);
+			con.drawString("ENSURE YOUR TYPED ANSWER MATCHES THE ANSWER LISTED, OR IT WILL BE MARKED AS WRONG", 100, 650);
 			con.repaint();
 			
 			String strAnswer = "";
@@ -586,6 +587,9 @@ public class CPTHailey1{
 				con.drawString("C: ", 100, 280);
 				con.drawString("D: ", 100, 320);
 				con.drawString("ANSWER: ", 100, 360);
+				con.drawString("PRESS ENTER AFTER TYPING EACH LINE TO SUBMIT YOUR TEXT", 100, 450);
+				con.drawString("AFTER SUBMITTING YOUR 'REAL' ANSWER, YOU WILL BE PROMPTED TO WRITE", 100, 490);
+				con.drawString("ANOTHER QUESTION OR FINISH YOUR QUIZ AND ADD IT TO THE LIST OF QUIZZES", 100, 520);
 				con.repaint();
 				
 				//get question input
