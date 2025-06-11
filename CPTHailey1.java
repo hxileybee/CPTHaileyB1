@@ -74,6 +74,17 @@ public class CPTHailey1{
 					con.sleep(1000);
 					
 					help(con);
+				}else if(chrInput == 'j' || chrInput == 'J'){
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(0, 0, 1280, 720);
+					con.repaint();
+					
+					con.setDrawColor(Color.WHITE);
+					con.drawString("LOADING JOKE...", 544, 360);
+					con.repaint();
+					con.sleep(1000);
+					
+					joke(con);
 				}
 			}
 			
@@ -804,6 +815,35 @@ public class CPTHailey1{
 			con.drawString("RETURNING TO MAIN MENU...", 500, 360);
 			con.repaint();
 			con.sleep(2000);
+		}
+	}
+	public static void joke(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.repaint();
+		
+		con.setDrawColor(Color.WHITE);
+		con.drawString("HOW DO DOLPHINS COMPUTE?", 470, 304);
+		con.drawString("PRESS (H)", 555, 332);
+		con.repaint();
+		
+		char chrInput = con.getChar();
+		
+		if(chrInput == 'h' || chrInput == 'H'){
+			con.drawString("THEY USE A CENTRAL PORPOISING UNIT!", 405, 400);
+			con.drawString("PRESS ENTER TO RETURN TO THE MAIN MENU", 385, 450);
+			con.repaint();
+			
+			char chrLeave = con.getChar();
+				
+			if(chrLeave == '\n'){
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0, 0, 1280, 720);
+				con.setDrawColor(Color.WHITE);
+				con.drawString("RETURNING TO MAIN MENU...", 500, 360);
+				con.repaint();
+				con.sleep(2000);
+			}
 		}
 	}
 }
