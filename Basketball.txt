@@ -1,0 +1,96 @@
+Question: Who is the greatest basketball player of all time?
+A: Lebron James
+B: Steph Curry
+C: Kyle Lowry
+D: LaMelo Ball
+Answer: Lebron James
+Question: What year did the Raptors most recently win the NBA championships?
+A: 2016
+B: 2019
+C: 2025
+D: 2022
+Answer: 2019
+Question: What do the letters NBA stand for?
+A: Names, Balls, Athletes
+B: Nobodies Bounce Around
+C: National Basketball Association
+D: New Basketball Association
+Answer: National Basketball Association
+Question: How many fouls are needed to get ejected from a game?
+A: 3
+B: 4
+C: 5
+D: 6
+Answer: 6
+Question: How many points does Steph Curry have (in total)?
+A: 25 386
+B: 42 184
+C: 33 785
+D: 15 678
+Answer: 25 386
+Question: How long are NBA quarters?
+A: 10 minutes
+B: 12 minutes
+C: 8 minutes
+D: 20 minutes
+Answer: 12 minutes
+Question: Which player has won the most NBA titles?
+A: Larry Bird
+B: Shaquille O'Neal
+C: Bill Russell
+D: Dennis Rodman
+Answer: Bill Russell
+Question: What team did Kobe Bryant play for?
+A: The Toronto Raptors
+B: Indiana Pacers
+C: New York Knicks
+D: Los Angeles Lakers
+Answer: Los Angeles Lakers
+Question: Which womens player has brought a lot of eyes to college basketball?
+A: Caitlin Clark
+B: Angel Reese
+C: Audi Crooks
+D: Raegan McCowan
+Answer: Caitlin Clark
+Question: What year was the first ever NBA game?
+A: 1950
+B: 1946
+C: 2000
+D: 1975
+Answer: 1946
+Question: Which team won the first NBA championship?
+A: Chicago Bulls
+B: Cleveland Cavaliers
+C: Philadelphia Warriors
+D: Los Angeles Lakers
+Answer: Philadelphia Warriors
+Question: How many players are on the court for one team during a basketball game?
+A: 4
+B: 6
+C: 7
+D: 5
+Answer: 5
+Question: What is the maximum number of points attainable on a single shot?
+A: 3
+B: 4
+C: 1
+D: 2
+Answer: 3
+Question: Where was basketball invented?
+A: Chicago, Illinois
+B: Springfield, Massachusetts
+C: Toronto, Ontario
+D: New York City, New York
+Answer: Springfield, Massachusetts
+Question: How long is a standard NBA game (no overtime)?
+A: 40 minutes
+B: 32 minutes
+C: 48 minutes
+D: 60 minutes
+Answer: 48 minutes
+Question: What is it called when a ball is touched on its way down toward the basket by defense?
+A: Charging
+B: Traveling
+C: Double dribble
+D: Goaltending
+Answer: Goaltending

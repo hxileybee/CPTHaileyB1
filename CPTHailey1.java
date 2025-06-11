@@ -19,8 +19,9 @@ public class CPTHailey1{
 				con.drawString("LEADERBOARD", 558, 220);
 				con.drawString("ADD QUIZ", 575, 260);
 				con.drawString("QUIT", 600, 300);
-				con.drawString("WHAT WOULD YOU LIKE TO DO? (click 1, 2, 3, or 4)", 350, 480);
+				con.drawString("WHAT WOULD YOU LIKE TO DO?", 472, 480);
 				con.drawString("1 - Play, 2 - Leaderboard, 3 - Add, 4 - Quit", 365, 500);
+				con.drawString("PRESS (H) FOR HELP", 520, 550);
 				
 				con.repaint();
 				
@@ -61,6 +62,17 @@ public class CPTHailey1{
 					addquiz(con);
 				}else if(chrInput == '4'){//closes window
 					con.closeConsole();
+				}else if(chrInput == 'h' || chrInput == 'H'){
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(0, 0, 1280, 720);
+					con.repaint();
+					
+					con.setDrawColor(Color.WHITE);
+					con.drawString("LOADING HELP...", 544, 360);
+					con.repaint();
+					con.sleep(1000);
+					
+					help(con);
 				}
 			}
 			
@@ -79,6 +91,8 @@ public class CPTHailey1{
 		con.repaint();
 		
 		//entering name code (center of screen-ish)
+		Color neonGreen = new Color(57, 255, 20);
+		
 		String strname = "";
 		char chrLetter;
 		boolean blnName = true;
@@ -106,6 +120,12 @@ public class CPTHailey1{
 			
 			con.drawString(strname, intStartx, 370);
 			con.repaint();
+		}
+		
+		boolean blnBrat = false;
+		
+		if(strname.equalsIgnoreCase("brat")){
+			blnBrat = true;
 		}
 		
 		//quiz selection
@@ -243,6 +263,11 @@ public class CPTHailey1{
 		}
 		
 		int intScore = 0;
+		
+		if(blnBrat){
+			intScore += 3.65;
+		}
+		
 		int intDone = 0;
 		
 		for(int intcount7 = 0; intcount7 < intQuestions; intcount7++){
@@ -258,7 +283,15 @@ public class CPTHailey1{
 			
 			//Header (name, score, percent)
 			String strHeader = strname +" - " +strChoice +", Score: " +intScore +"/" +intDone +" (" +intPercent +"%)";
+			
+			if(blnBrat){
+				con.setDrawColor(neonGreen);
+			}else{
+				con.setDrawColor(Color.WHITE);
+			}
+			
 			con.drawString(strHeader, 450, 40);
+			con.setDrawColor(Color.WHITE);
 			
 			//Showing/Drawing question and options
 			int inty3 = 100;
@@ -274,7 +307,8 @@ public class CPTHailey1{
 			con.setDrawColor(Color.WHITE);
 			con.drawString("YOUR ANSWER: ", 100, 300);
 			con.drawString("TYPE THE TEXT AFTER THE COLON AS YOUR ANSWER", 100, 500);
-			con.drawString("EXAMPLE - A: purple, red, you would type 'purple, red' only; INCLUDE PUNCTUATION", 100, 550);
+			con.drawString("EXAMPLE - A: purple, red, you would type 'purple, red' only; INCLUDE PUNCTUATION & SPACES", 100, 550);
+			con.drawString("ENSURE YOUR TYPED ANSWER MATCHES THE ANSWER LISTED, OR IT WILL BE MARKED AS WRONG", 100, 600);
 			con.repaint();
 			
 			String strAnswer = "";
@@ -311,11 +345,12 @@ public class CPTHailey1{
 			for(int intNum3 = 0; intNum3 < strCorrectAnswer.length() && !blnColon; intNum3++){
 				if(strCorrectAnswer.charAt(intNum3) == ':' && intNum3 + 2 < strCorrectAnswer.length()){
 					intColon = intNum3;
+					
 					strFull = strCorrectAnswer.substring(intNum3 + 2);
 					blnColon = true;
 				}
 			}
-		
+			
 			if(strAnswer.equalsIgnoreCase(strFull)){
 				intScore++;
 				con.setDrawColor(Color.WHITE);
@@ -464,8 +499,7 @@ public class CPTHailey1{
 		
 		con.setDrawColor(Color.WHITE);
 		con.drawString("WHAT IS THE NAME OF YOUR QUIZ?", 450, 200);
-		con.drawString("ADD '.txt' TO THE END OF YOUR NAME", 420, 250);
-		con.drawString("EXAMPLE: Movies.txt", 505, 300);
+		con.drawString("EXAMPLE NAMES: Movies, Sports", 505, 250);
 		con.repaint();
 		
 		//entering quiz name code (center of screen-ish)
@@ -510,18 +544,256 @@ public class CPTHailey1{
 		
 		quizFile.close();
 		
-		//then ask if they have a question to add
+		//open quiz file to write questions
+		//and ask if they have a question to add
 		
-		//ask for the question, A, B, C, D 
-		//and the real answer
+		TextOutputFile quizFile2 = new TextOutputFile(strquizname, true);
 		
+		boolean blnAnswer = true;
 		
-		//then add that to the file with that name
+		while(blnAnswer){
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 1280, 720);
+			con.setDrawColor(Color.WHITE);
+			con.drawString("DO YOU HAVE A QUESTION TO ADD?", 442, 240);
+			con.drawString("PRESS 'Y' FOR YES, PRESS 'N' FOR NO", 415, 480);
+			con.repaint();
+			
+			char chrChoice = con.getChar();
+			
+			if(chrChoice == 'y' || chrChoice == 'Y'){
+				String strQuestion = "";
+				String strA = "";
+				String strB = "";
+				String strC = "";
+				String strD = "";
+				String strCorrect = "";
+				char chrInput;
+				boolean blnTyping = true;
+				
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0, 0, 1280, 720);
+				
+				con.setDrawColor(Color.WHITE);
+				con.drawString("QUESTION: ", 100, 100);
+				con.drawString("A: ", 100, 140);
+				con.drawString("B: ", 100, 180);
+				con.drawString("C: ", 100, 220);
+				con.drawString("D: ", 100, 260);
+				con.drawString("ANSWER: ", 100, 300);
+				con.repaint();
+				
+				//get question input
+				while(blnTyping){
+					chrInput = con.getChar();
+					
+					if(chrInput == '\n'){
+						blnTyping = false;
+					}else if(chrInput == '\b'){
+						if(strQuestion.length() > 0){
+							strQuestion = strQuestion.substring(0, strQuestion.length() - 1);
+						}
+					}else if(chrInput >= 32 && chrInput <= 126){
+						strQuestion += chrInput;
+					}
+					
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(300, 100, 900, 30);
+					con.setDrawColor(Color.WHITE);
+					con.drawString(strQuestion, 300, 100);
+					con.repaint();
+				}
+				
+				//get strA input
+				
+				blnTyping = true;
+				while(blnTyping){
+					chrInput = con.getChar();
+					
+					if(chrInput == '\n'){
+						blnTyping = false;
+					}else if(chrInput == '\b'){
+						if(strA.length() > 0){
+							strA = strA.substring(0, strA.length() - 1);
+						}
+					}else if(chrInput >= 32 && chrInput <= 126){
+						strA += chrInput;
+					}
+					
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(160, 140, 900, 30);
+					con.setDrawColor(Color.WHITE);
+					con.drawString(strA, 160, 140);
+					con.repaint();
+				}
+				
+				//get strB input
+				
+				blnTyping = true;
+				while(blnTyping){
+					chrInput = con.getChar();
+					
+					if(chrInput == '\n'){
+						blnTyping = false;
+					}else if(chrInput == '\b'){
+						if(strB.length() > 0){
+							strB = strB.substring(0, strB.length() - 1);
+						}
+					}else if(chrInput >= 32 && chrInput <= 126){
+						strB += chrInput;
+					}
+					
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(160, 180, 900, 30);
+					con.setDrawColor(Color.WHITE);
+					con.drawString(strB, 160, 180);
+					con.repaint();
+				}
+				
+				//get strC input
+				
+				blnTyping = true;
+				while(blnTyping){
+					chrInput = con.getChar();
+					
+					if(chrInput == '\n'){
+						blnTyping = false;
+					}else if(chrInput == '\b'){
+						if(strC.length() > 0){
+							strC = strC.substring(0, strC.length() - 1);
+						}
+					}else if(chrInput >= 32 && chrInput <= 126){
+						strC += chrInput;
+					}
+					
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(160, 220, 900, 30);
+					con.setDrawColor(Color.WHITE);
+					con.drawString(strC, 160, 220);
+					con.repaint();
+				}
+				
+				//get strD input
+				
+				blnTyping = true;
+				while(blnTyping){
+					chrInput = con.getChar();
+					
+					if(chrInput == '\n'){
+						blnTyping = false;
+					}else if(chrInput == '\b'){
+						if(strD.length() > 0){
+							strD = strD.substring(0, strD.length() - 1);
+						}
+					}else if(chrInput >= 32 && chrInput <= 126){
+						strD += chrInput;
+					}
+					
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(160, 260, 900, 30);
+					con.setDrawColor(Color.WHITE);
+					con.drawString(strD, 160, 260);
+					con.repaint();
+				}
+				
+				//get real answer input
+				
+				blnTyping = true;
+				while(blnTyping){
+					chrInput = con.getChar();
+					
+					if(chrInput == '\n'){
+						blnTyping = false;
+					}else if(chrInput == '\b'){
+						if(strCorrect.length() > 0){
+							strCorrect = strCorrect.substring(0, strCorrect.length() - 1);
+						}
+					}else if(chrInput >= 32 && chrInput <= 126){
+						strCorrect += chrInput;
+					}
+					
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(200, 300, 900, 30);
+					con.setDrawColor(Color.WHITE);
+					con.drawString(strCorrect, 200, 300);
+					con.repaint();
+				}
+				
+				quizFile2.println("Question: " +strQuestion);
+				quizFile2.println("A: " +strA);
+				quizFile2.println("B: " +strB);
+				quizFile2.println("C: " +strC);
+				quizFile2.println("D: " +strD);
+				quizFile2.println("Answer: " +strCorrect);
+				
+			}else if(chrChoice == 'n' || chrChoice == 'N'){
+				blnAnswer = false;
+				
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0, 0, 1280, 720);
+				con.setDrawColor(Color.WHITE);
+				con.drawString("QUIZ SAVED SUCCESSFULLY", 460, 300);
+				con.drawString("PRESS ENTER TO RETURN TO THE MAIN MENU", 370, 350);
+				con.repaint();
+				
+				char chrLeave = con.getChar();
+					
+				if(chrLeave == '\n'){
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(0, 0, 1280, 720);
+					con.setDrawColor(Color.WHITE);
+					con.drawString("RETURNING TO MAIN MENU...", 500, 360);
+					con.repaint();
+					con.sleep(2000);
+				}
+			}
+		}
+	}
+	public static void help(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.repaint();
 		
+		con.setDrawColor(Color.WHITE);
 		
-		//clear screen + text	
+		//Load text
+		con.drawString("HELP CENTRE", 574, 30);
 		
+		con.drawString("OBJECTIVE:", 100, 100);
+		con.drawString("Answer quiz questions correctly to get the highest score", 100, 130);
+	
+		con.drawString("HOW TO PLAY:", 100, 160);
+		con.drawString("Select a quiz from the main menu", 100, 190);
+		con.drawString("Answer multiple-choice questions by typing the full answer, not A/B/C/D", 100, 220);
+		con.drawString("Create your own quiz using the 'ADD QUIZ' option", 100, 250);
+	
+		con.drawString("CONTROLS: ", 100, 280);
+		con.drawString("Use the keyboard to type answers", 100, 310);
+		con.drawString("Press ENTER to submit/confirm an answer", 100, 340);
+		con.drawString("Press BACKSPACE to erase characters", 100, 370);
+		con.drawString("Press 1, 2, 3, .. or Y/N when applicable to respond to prompts", 100, 400);
+	
+		con.drawString("SCORING:", 100, 430);
+		con.drawString("You earn points for each correct answer", 100, 460);
+		con.drawString("Your final score is shown at the end and saved to the leaderboard", 100, 490);
 		
+		con.drawString("NAVIGATION:", 100, 520);
+		con.drawString("Press enter to return to the main menu when prompted", 100, 550);
+		
+		con.drawString("NOTE: '.txt' will be added to your quiz name, you do not need to type it yourself", 100, 580);
+		
+		con.drawString("PRESS ENTER TO RETURN TO THE MAIN MENU", 394, 650);
+		con.repaint();
+				
+		char chrLeave = con.getChar();
+				
+		if(chrLeave == '\n'){
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 1280, 720);
+			con.setDrawColor(Color.WHITE);
+			con.drawString("RETURNING TO MAIN MENU...", 500, 360);
+			con.repaint();
+			con.sleep(2000);
+		}
 	}
 }
-
