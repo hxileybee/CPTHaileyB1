@@ -4,6 +4,10 @@ import java.awt.*;
 public class CPTHailey1{
 	public static void main(String[] args){
 		Console con = new Console("Multiple Choice Game", 1280, 720);
+		//Hailey Boland
+		//Multiple Choice Game
+		//Date last modified: 2025-06-12
+		//Version number: 1.0711
 			
 			boolean blnMenu = true;
 			
